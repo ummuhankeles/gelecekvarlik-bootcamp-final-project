@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApartmentManagement.Entity\ApartmentManagement.Entity.csproj" />
+    <ProjectReference Include="..\ApartmentManagement.Interface\ApartmentManagement.Interface.csproj" />
   </ItemGroup>
 
 </Project>

@@ -38,5 +38,7 @@ namespace ApartmentManagement.Interface
 
         //iqueryable listeleme
         IResponse<IQueryable<TDto>> GetQueryable();
+
+        void Save();
     }
 }

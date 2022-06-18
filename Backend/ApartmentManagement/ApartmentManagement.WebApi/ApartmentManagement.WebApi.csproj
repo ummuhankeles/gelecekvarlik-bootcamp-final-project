@@ -9,7 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\ApartmentManagement.Bll\ApartmentManagement.Bll.csproj" />
+    <ProjectReference Include="..\ApartmentManagement.Dal\ApartmentManagement.Dal.csproj" />
+    <ProjectReference Include="..\ApartmentManagement.Entity\ApartmentManagement.Entity.csproj" />
+    <ProjectReference Include="..\ApartmentManagement.Interface\ApartmentManagement.Interface.csproj" />
   </ItemGroup>
 
 </Project>

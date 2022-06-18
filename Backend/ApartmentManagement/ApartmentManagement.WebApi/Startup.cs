@@ -1,6 +1,13 @@
+using ApartmentManagement.Bll;
+using ApartmentManagement.Dal.Abstract;
+using ApartmentManagement.Dal.Concrete.EntityFramework.Repository;
+using ApartmentManagement.Dal.Concrete.EntityFramework.UnitOfWork;
+using ApartmentManagement.Dal.EntityFramework.Context;
+using ApartmentManagement.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +32,25 @@ namespace ApartmentManagement.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region JwtTokenService
+            #endregion
+
+            #region ApplicationContext
+            services.AddDbContext<ApartmentManagementSystemContext>();
+            services.AddScoped<DbContext, ApartmentManagementSystemContext>();
+            #endregion
+
+            #region ServiceSection
+            services.AddScoped<IApartmentService, ApartmentManager>();
+            #endregion
+
+            #region RepositorySection
+            services.AddScoped<IApartmentRepository, ApartmentRepository>();
+            #endregion
+
+            #region UnitOfWork
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            #endregion
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

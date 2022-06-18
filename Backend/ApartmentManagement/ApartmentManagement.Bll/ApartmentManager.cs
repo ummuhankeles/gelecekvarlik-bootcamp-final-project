@@ -2,6 +2,7 @@
 using ApartmentManagement.Entity.Dto;
 using ApartmentManagement.Entity.Models;
 using ApartmentManagement.Interface;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace ApartmentManagement.Bll
@@ -12,6 +13,7 @@ namespace ApartmentManagement.Bll
 
         public ApartmentManager(IServiceProvider service) : base(service)
         {
+            apartmentRepository = service.GetService<IApartmentRepository>();
         }
     }
 }

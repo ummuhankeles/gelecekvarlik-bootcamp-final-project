@@ -21,7 +21,7 @@ namespace ApartmentManagement.Entity.Models
         public string UserEmail { get; set; }
         public string UserUsername { get; set; }
         public string UserPassword { get; set; }
-        public int UserPhoneNumber { get; set; }
+        public string UserPhoneNumber { get; set; }
         public string UserCarInfo { get; set; }
         public int RoleId { get; set; }
 

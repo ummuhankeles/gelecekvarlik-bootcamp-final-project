@@ -42,10 +42,12 @@ namespace ApartmentManagement.WebApi
 
             #region ServiceSection
             services.AddScoped<IApartmentService, ApartmentManager>();
+            services.AddScoped<IUserService, UserManager>();
             #endregion
 
             #region RepositorySection
             services.AddScoped<IApartmentRepository, ApartmentRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             #endregion
 
             #region UnitOfWork

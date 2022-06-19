@@ -1,6 +1,8 @@
 ﻿using ApartmentManagement.Entity.Base;
 using ApartmentManagement.Entity.IBase;
 using ApartmentManagement.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +12,7 @@ namespace ApartmentManagement.WebApi.Base
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] // apibase den kalıtım alan her yerin authorize yetkisi sorgulansın
     public class ApiBaseController<TService, T, TDto> : ControllerBase where TService : IGenericService<T, TDto> where T : EntityBase where TDto : DtoBase
     {
         private readonly TService service;

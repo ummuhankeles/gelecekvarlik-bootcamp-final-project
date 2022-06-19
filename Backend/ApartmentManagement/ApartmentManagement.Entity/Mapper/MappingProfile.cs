@@ -20,6 +20,9 @@ namespace ApartmentManagement.Entity.Mapper
             CreateMap<Message, DtoMessage>().ReverseMap();
             CreateMap<Month, DtoMonth>().ReverseMap();
             CreateMap<User, DtoUser>().ReverseMap();
+            CreateMap<User, DtoLoginUser>();
+            CreateMap<DtoLogin, User>();
+            CreateMap<DtoRegister, User>();
         }
     }
 }

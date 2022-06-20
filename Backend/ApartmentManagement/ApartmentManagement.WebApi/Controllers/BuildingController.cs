@@ -13,12 +13,12 @@ namespace ApartmentManagement.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ApiBaseController<IUserService, User, DtoUser>
+    public class BuildingController : ApiBaseController<IBuildingService, Building, DtoBuilding>
     {
-        private readonly IUserService userService;
-        public UserController(IUserService userService) : base(userService)
+        private readonly IBuildingService buildingService;
+        public BuildingController(IBuildingService service) : base(service)
         {
-            this.userService = userService;
+            this.buildingService = buildingService;
         }
     }
 }

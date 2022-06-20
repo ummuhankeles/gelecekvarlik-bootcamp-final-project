@@ -59,6 +59,7 @@ namespace ApartmentManagement.WebApi.Base
         }
 
         [HttpPost("Add")]
+        [Authorize(Roles = "Admin")]
         public IResponse<TDto> Add(TDto entity)
         {
             try
@@ -77,6 +78,7 @@ namespace ApartmentManagement.WebApi.Base
         }
 
         [HttpPut("Update")]
+        [Authorize(Roles = "Admin")]
         public IResponse<TDto> Update(TDto item)
         {
             try
@@ -95,6 +97,7 @@ namespace ApartmentManagement.WebApi.Base
         }
 
         [HttpDelete("Delete")]
+        [Authorize(Roles = "Admin")]
         public IResponse<bool> Delete(int id)
         {
             try
